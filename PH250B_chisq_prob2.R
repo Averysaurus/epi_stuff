@@ -65,8 +65,7 @@ oldr_or
 # Among women ages 30-40 (older), women exposed to the chemical have ??? times greater odds of preterm delivery than women not exposed.
 
 
-# d)Do you think that the PI should present the adjusted measure of association?  Explain your answer in one sentence. 
-
+## d) Do you think that the PI should present the adjusted measure of association?  Explain your answer in one sentence. 
 # Is effect measure modification present? Are the stratafied ORs equivalent? 
 youngr_or == oldr_or
 
@@ -85,34 +84,31 @@ weight_2 <- (1/"a" + 1/"b" + 1/"c" + 1/"d")^-1
 chi_squared_hom <- weight_1 * (log(youngr_or) - log(mh_adj_or))^2 + 
   weight_2 * (log(oldr_or) - log(mh_adj_or))^2
 
-
+# round for legibility
 round((chi_squared_hom), 3)
 
+            
 ?dchisq
 # obtain p-value.
 pval <- dchisq(4.5, df = 1)
 pval
 
 
+## ii. The p-value for the χ2  test, if you calculated it correctly, would be <0.05. State the null hypothesis for this test, and interpret your finding in relation to this null hypothesis
 
+# We reject the null hypothesis that the individual stratified measures of association and the adjusted measure (ORMH) are homogenous. In so doing, we fail to reject the alternative: Age is an effect measure modifier, i.e. the association between the chemical and preterm delivery differs by age category.
 
+## f) How would you interpret your analysis results in  with respect to what the associations reveal about interacting causal types? Assume that your results are unbiased..
 
-# ii. The p-value for the χ2  test, if you calculated it correctly, would be <0.05. State the null hypothesis for this test, and interpret your finding in relation to this null hypothesis
+# Even if results are unbiased, we cannot make statements about interaction as a causal concept based on multiplicative interaction – thus this is effect modification only (measure of association modification) We could not say maternal exposure to this chemical during pregnancy *caused* preterm delivery just from the results of this test. 
 
-## We reject the null hypothesis that the individual stratified measures of association and the adjusted measure (ORMH) are homogenous. 
+## g)  Before the investigator started the study, what three criteria should they have considered to assess whether age is a confounder?
+            
+#Think to the confounder criteria from our lectures with DAG models:
 
-## In so doing, we fail to reject the alternative: Age is an effect measure modifier, i.e. the association between the chemical and preterm delivery differs by age category.
-
-# f) How would you interpret your analysis results in  with respect to what the associations reveal about interacting causal types? Assume that your results are unbiased..
-
-## Even if results are unbiased, we cannot make statements about interaction as a causal concept based on multiplicative interaction – thus this is effect modification only (measure of association modification) We could not say maternal exposure to this chemical during pregnancy caused preterm delivery just from the results of this test. 
-
-
-# g)  Before the investigator started the study, what three criteria should they have considered to assess whether age is a confounder? Think to the confounder criteria from our lectures with DAG models. 
-
-#1. Age must cause preterm delivery in the source population
-#2. Age must be associated with the exposure in the source population
-#3. Age must not be caused by exposure or disease
+  #1. Age must cause preterm delivery in the source population
+  #2. Age must be associated with the exposure in the source population
+  #3. Age must not be caused by exposure or disease
 
 
 
