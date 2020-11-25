@@ -71,8 +71,7 @@ youngr_or == oldr_or
 
 ## e)  Answer the following questions:
 
-# i.	Calculate the Χ2  test of homogeneity. (2 points)
-
+# i.	Calculate the Χ2  test of homogeneity. 
 ### Chi-square test for homogeneity = Σ Wi(lnORi - lnOR)^2 ###
 
 # calculate weights
