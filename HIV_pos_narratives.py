@@ -109,30 +109,7 @@ text_file = open('ocr_text.txt', 'w')
 text_file.write(joined_string)
 text_file.close()
 
-
-
-OOV = 'OOV'
-new_tokens = []
-for token in tokens:
-    if freq[token] == 1:
-        new_tokens.append(OOV)
-    else:
-        new_tokens.append(token)
-
-
-
-
-
-
-
-
-
-
-ocr_text = ''.join([ch for ch in ocr_text if ch not in punctuation])
-ocr_text 
-
-# ocr_tex.to_csv('/Users/avery/Desktop/D-Lab_Fellow/HIV_narative/ocr_text.csv',
-#               escapechar = ',')
+# Note: so far there are many words shmooshed together, not sure if pre-processing or ocr error. 
 
 
 
